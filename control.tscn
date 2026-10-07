@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://beaqghthtesgj"]
+
+[ext_resource type="Script" uid="uid://b0c8pilovht0y" path="res://control.gd" id="1_0fbet"]
+
+[node name="Control" type="Control" unique_id=1632963864]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0fbet")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1126804722]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 740.0
+offset_bottom = 116.0
+
+[node name="Instructions" type="Label" parent="VBoxContainer" unique_id=1658515511]
+layout_mode = 2
+text = "Informe o total semanal de horas trabalhadas por um funcionário
+(Note que: os valores devem ser em horas, para minutos use \".\" o ponto no lugar da virgula): "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=1934090303]
+layout_mode = 2
+
+[connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
